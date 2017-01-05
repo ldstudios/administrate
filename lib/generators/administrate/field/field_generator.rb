@@ -19,7 +19,8 @@ module Administrate
       private
 
       def copy_partial(partial_name)
-        partial = "_#{partial_name}.html.erb"
+        file_type = Rails.application.config.generators.options[:rails][:template_engine] == :slim ? 'slim' : 'erb'
+        partial = "_#{partial_name}.html.#{ file_type }"
 
         copy_file(
           partial,

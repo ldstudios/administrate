@@ -23,7 +23,8 @@ module Administrate
 
         def copy_field_partial(partial_name)
           resource_path = args.first.try(:underscore)
-          template_file = "#{resource_path}/_#{partial_name}.html.erb"
+          file_type = Rails.application.config.generators.options[:rails][:template_engine] == :slim ? 'slim' : 'erb'
+          template_file = "#{resource_path}/_#{partial_name}.html.#{ file_type }"
 
           copy_file(
             template_file,
