@@ -15,7 +15,8 @@ module Administrate
     end
 
     def copy_resource_template(template_name)
-      template_file = "#{template_name}.html.erb"
+      file_type = Rails.application.config.generators.options[:rails][:template_engine] == :slim ? 'slim' : 'erb'
+      template_file = "#{template_name}.html.#{ file_type }"
 
       copy_file(
         template_file,

@@ -7,9 +7,10 @@ module Administrate
         source_root template_source_path
 
         def copy_template
+          file_type = Rails.application.config.generators.options[:rails][:template_engine] == :slim ? 'slim' : 'erb'
           copy_file(
-            "../../layouts/administrate/application.html.erb",
-            "app/views/layouts/admin/application.html.erb",
+            "../../layouts/administrate/application.html.#{ file_type }",
+            "app/views/layouts/admin/application.html.#{ file_type }",
           )
 
           call_generator("administrate:views:sidebar")
