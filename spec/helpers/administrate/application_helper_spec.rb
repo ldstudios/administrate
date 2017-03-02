@@ -20,6 +20,12 @@ RSpec.describe Administrate::ApplicationHelper do
       expect(displayed).to eq("Customers")
     end
 
+    xit "handles namespaced arguments" do
+      displayed = display_resource_name("blog/post")
+
+      expect(displayed).to eq("Blog post")
+    end
+
     context "when translations are defined" do
       it "uses the plural of the defined translation" do
         translations = {

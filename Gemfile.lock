@@ -1,11 +1,10 @@
 GIT
   remote: https://github.com/thoughtbot/administrate-field-image.git
-  revision: faf7a9b3ce1dcab0695af7f51e225ad208d7777b
-  branch: jq-rails-5
+  revision: f49c0ea70805937247538739ff1ba4c7f94b3d6a
   specs:
-    administrate-field-image (0.0.2)
-      administrate (>= 0.2.0.rc1, < 0.3.0)
-      rails (>= 4.2, < 5.1)
+    administrate-field-image (1.0.0)
+      administrate (>= 0.2.0.rc1)
+      rails (>= 4.2)
 
 PATH
   remote: .
@@ -326,4 +325,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.13.5
+   1.14.5

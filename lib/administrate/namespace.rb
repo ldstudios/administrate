@@ -10,6 +10,12 @@ module Administrate
       end
     end
 
+    def models
+      namespace_controller_paths.uniq.map do |controller|
+        controller.split(/^#{namespace}\//)[1].classify.constantize
+      end
+    end
+
     private
 
     attr_reader :namespace
