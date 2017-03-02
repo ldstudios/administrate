@@ -8,7 +8,12 @@ module Administrate
 
       def resource_name
         @resource_name ||=
-          dashboard.class.to_s.scan(/(.+)Dashboard/).first.first.underscore
+          dashboard.class.to_s.split('Dashboard').first.underscore
+      end
+
+      def resource_model_name
+        @resource_model_name ||=
+          dashboard.class.to_s.split('Dashboard').first.classify.constantize.model_name
       end
 
       protected
